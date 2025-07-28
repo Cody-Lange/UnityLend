@@ -1,0 +1,7 @@
+{
+  "version": "1",
+  "build": {
+    "rootDir": "react_web_app",
+    "destinationDir": "dist"
+  }
+}
