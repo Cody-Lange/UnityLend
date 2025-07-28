@@ -1,2 +1,93 @@
-Okay I messed up bad. Recreate Cody-Lange/UnityLend BUT THIS IS SUPPOSED TO HOUSE EVERYTHING, INCLUDINH THER WHOLE django_backend folder
+# Dependencies
+node_modules/
+**/node_modules/
+package-lock.json
+**/package-lock.json
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+*.build
+
+# Environment files
+.env
+**/.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Cache directories
+.cache/
+**/.cache/
+.vite/
+**/.vite/
+.next/
+.nuxt/
+
+# Logs
+*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+**/venv/
+venv_*/
+**/venv_*/
+env/
+**/env/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.sqlite3
+**/db.sqlite3
+media/
+**/media/
+staticfiles/
+**/staticfiles/
+
+# Wrangler
+.wrangler/
+**/.wrangler/
+
+# React Native
+**/android/
+**/ios/
+**/.expo/
+
+# Local development
+.local
+**/.local
 

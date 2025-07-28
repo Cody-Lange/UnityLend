@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=unitylend"
+  }
+}
