@@ -61,6 +61,7 @@ Vite is a modern build tool that:
 ## 🚀 Deployment
 
 This web app can be deployed to:
+- **Cloudflare Pages** (current setup)
 - Vercel
 - Netlify
 - GitHub Pages
