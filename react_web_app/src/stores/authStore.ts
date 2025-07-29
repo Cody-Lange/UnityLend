@@ -5,12 +5,14 @@ interface User {
   firstName: string
   lastName: string
   email: string
+  walletAddress?: string
 }
 
 interface AuthState {
   user: User | null
   isAuthenticated: boolean
   login: (email: string, password: string) => Promise<void>
+  loginWithUser: (user: User) => void
   logout: () => void
   setUser: (user: User) => void
 }
@@ -27,6 +29,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       email: email
     }
     set({ user: mockUser, isAuthenticated: true })
+  },
+  loginWithUser: (user: User) => {
+    set({ user, isAuthenticated: true })
   },
   logout: () => {
     set({ user: null, isAuthenticated: false })
