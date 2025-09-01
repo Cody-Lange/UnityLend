@@ -59,8 +59,9 @@ const Features: React.FC = () => {
             className="inner-container _550px w-tab-menu"
           >
             {tabs.map((tab) => (
-              <a 
+              <button 
                 key={tab.id}
+                type="button"
                 data-w-tab={tab.id} 
                 data-w-id={`a397360f-d083-4066-5604-2abfb570f7${tab.id === 'Tab 1' ? 'ab' : tab.id === 'Tab 2' ? 'b7' : 'c3'}`}
                 className={`tab-menu-large sibling-opacity-item w-inline-block w-tab-link${activeTab === tab.id ? ' w--current' : ''}`}
@@ -68,6 +69,7 @@ const Features: React.FC = () => {
                   e.preventDefault();
                   setActiveTab(tab.id);
                 }}
+                style={{ border: 'none', background: 'none', padding: 0, width: '100%', textAlign: 'left' }}
               >
                 <div className="accordion-item-wrapper tab-menu-item">
                   <div className="accordion-content-wrapper v2">
@@ -97,7 +99,7 @@ const Features: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
           

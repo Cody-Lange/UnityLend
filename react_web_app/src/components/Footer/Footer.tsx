@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
             <div data-w-id="9a042dcd-8c2c-a0af-5e12-caedcf77f815" className="mg-bottom-80px">
               <div className="text-200 footer-title">Pages</div>
               <div className="grid-3-columns footer-pages-grid">
-                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f819-cf77f7c9" role="list" className="footer-list-wrapper">
+                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f819-cf77f7c9" className="footer-list-wrapper">
                   {pageLinks.slice(0, 5).map((link, index) => (
                     <li key={link.href} className="footer-list-item">
                       <a 
@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f832-cf77f7c9" role="list" className="footer-list-wrapper">
+                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f832-cf77f7c9" className="footer-list-wrapper">
                   {pageLinks.slice(5).concat(contactLinks.slice(0, 1)).map((link, index) => (
                     <li key={link.href} className="footer-list-item">
                       <a 
@@ -210,7 +210,7 @@ const Footer: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f848-cf77f7c9" role="list" className="footer-list-wrapper">
+                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f848-cf77f7c9" className="footer-list-wrapper">
                   {contactLinks.concat(utilityLinks.slice(0, 1)).map((link, index) => (
                     <li key={link.href} className="footer-list-item">
                       <a 
@@ -229,7 +229,7 @@ const Footer: React.FC = () => {
             <div data-w-id="9a042dcd-8c2c-a0af-5e12-caedcf77f85e" className="grid-2-columns footer-bottom-pages-grid">
               <div id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f85f-cf77f7c9">
                 <div className="text-200 footer-title">Utility Pages</div>
-                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f862-cf77f7c9" role="list" className="footer-list-wrapper">
+                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f862-cf77f7c9" className="footer-list-wrapper">
                   {utilityLinks.map((link, index) => (
                     <li key={link.href} className="footer-list-item">
                       <a 
@@ -245,7 +245,7 @@ const Footer: React.FC = () => {
               </div>
               <div id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f875-cf77f7c9">
                 <div className="text-200 footer-title">Template Pages</div>
-                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f878-cf77f7c9" role="list" className="footer-list-wrapper">
+                <ul id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f878-cf77f7c9" className="footer-list-wrapper">
                   {templateLinks.map((link, index) => (
                     <li key={link.href} className="footer-list-item">
                       <a 

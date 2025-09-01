@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { initializeWebflow } from './utils/webflow';
 import { useWebflowAnimations } from './hooks/useWebflowAnimations';
 import Header from './components/Header';
 import Hero from './components/Hero';

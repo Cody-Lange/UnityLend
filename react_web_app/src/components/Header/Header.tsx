@@ -29,7 +29,7 @@ const Header: React.FC = () => {
           
           <div className="header-middle">
             <nav role="navigation" className="header-nav-menu-wrapper w-nav-menu">
-              <ul role="list" className="header-nav-menu-list">
+              <ul className="header-nav-menu-list">
                 <li data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc3f" className="header-nav-list-item middle sibling-opacity-item">
                   <a href="/" className="header-nav-link w-nav-link">Home</a>
                 </li>
@@ -96,32 +96,34 @@ const Header: React.FC = () => {
           
           <div className="header-right-side">
             <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="modal" data-wf-cart-query="" data-wf-page-link-href-prefix="" className="w-commerce-commercecartwrapper cart-link-container">
-              <a 
-                href="#" 
+              <button 
+                type="button"
                 onClick={(e) => { e.preventDefault(); setIsCartOpen(!isCartOpen); }}
                 data-node-type="commerce-cart-open-link" 
                 className="w-commerce-commercecartopenlink cart-button w-inline-block" 
                 role="button" 
                 aria-haspopup="dialog" 
                 aria-label="Open cart"
+                style={{ border: 'none', background: 'none', padding: 0, display: 'inline-flex', alignItems: 'center' }}
               >
                 <div className="w-inline-block">Cart (</div>
                 <div className="w-commerce-commercecartopenlinkcount cart-quantity">0</div>
                 <div className="w-inline-block">)</div>
-              </a>
+              </button>
               
               {isCartOpen && (
                 <div data-node-type="commerce-cart-container-wrapper" className="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-modal">
                   <div data-node-type="commerce-cart-container" role="dialog" className="w-commerce-commercecartcontainer cart-container">
                     <div className="w-commerce-commercecartheader cart-header">
                       <h4 className="w-commerce-commercecartheading">Your Cart</h4>
-                      <a 
-                        href="#" 
+                      <button 
+                        type="button"
                         onClick={(e) => { e.preventDefault(); setIsCartOpen(false); }}
                         data-node-type="commerce-cart-close-link" 
                         className="w-commerce-commercecartcloselink w-inline-block" 
                         role="button" 
                         aria-label="Close cart"
+                        style={{ border: 'none', background: 'none', padding: 0 }}
                       >
                         <svg width="16px" height="16px" viewBox="0 0 16 16">
                           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -130,7 +132,7 @@ const Header: React.FC = () => {
                             </g>
                           </g>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                     <div className="w-commerce-commercecartformwrapper">
                       <div className="w-commerce-commercecartemptystate">
