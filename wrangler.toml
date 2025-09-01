@@ -1,7 +1,0 @@
-name = "frat-boy-financial"
-compatibility_date = "2024-09-01"
-pages_build_output_dir = "react_web_app/build"
-
-[build]
-command = "cd react_web_app && npm install && npm run build"
-cwd = "."
