@@ -64,15 +64,6 @@ const Header: React.FC = () => {
                               <div id="w-node-_48b0a8d6-09fb-cd59-bc0c-cf409ba3cc76-9ba3cc37" className="w-layout-grid grid-1-column dropdown-link-column">
                                 <a href="/contact" data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc77" className="dropdown-link w-dropdown-link">Contact</a>
                                 <a href="/pricing" data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc7d" className="dropdown-link w-dropdown-link">Pricing</a>
-                                <a 
-                                  href="/whitepaper.pdf" 
-                                  data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc7e" 
-                                  className="dropdown-link w-dropdown-link"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Whitepaper (PDF)
-                                </a>
                               </div>
                             </div>
                           </div>
@@ -94,16 +85,6 @@ const Header: React.FC = () => {
                 <li data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc95" className="header-nav-list-item middle sibling-opacity-item">
                   <a href="/pricing" className="header-nav-link w-nav-link">Pricing</a>
                 </li>
-                <li data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc96" className="header-nav-list-item middle sibling-opacity-item">
-                  <a 
-                    href="/whitepaper.pdf" 
-                    className="header-nav-link w-nav-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Whitepaper
-                  </a>
-                </li>
                 <li data-w-id="48b0a8d6-09fb-cd59-bc0c-cf409ba3cc98" className="header-nav-list-item show-in-tablet sibling-opacity-item">
                   <a href="/pricing" className="btn-primary small w-button">Get started</a>
                 </li>
@@ -112,6 +93,22 @@ const Header: React.FC = () => {
           </div>
           
           <div className="header-right-side">
+            <div className="cart-link-container">
+              <a 
+                href="/whitepaper" 
+                className="header-nav-link w-nav-link whitepaper-link"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center',
+                  color: 'white',
+                  textDecoration: 'none',
+                  fontWeight: '500'
+                }}
+              >
+                <div className="w-inline-block">📋 Whitepaper</div>
+              </a>
+            </div>
+            
             <div className="hamburger-menu-wrapper w-nav-button">
               <div className="hamburger-menu-bar top"></div>
               <div className="hamburger-menu-bar bottom"></div>
