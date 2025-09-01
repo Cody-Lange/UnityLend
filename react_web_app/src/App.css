@@ -1,0 +1,12 @@
+/* Remove default React styles to let Webflow CSS take over */
+
+/* Ensure React doesn't interfere with Webflow animations */
+* {
+  box-sizing: border-box;
+}
+
+/* Make sure images load properly */
+img {
+  max-width: 100%;
+  height: auto;
+}

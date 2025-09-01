@@ -1,49 +1,47 @@
 {
-  "name": "unitylend-web-app",
-  "version": "1.0.0",
-  "description": "UnityLend Web Application - DeFi Lending Platform",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=unitylend"
-  },
+  "name": "react_web_app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.1.15",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-toast": "^1.1.5",
-    "@tanstack/react-query": "^4.40.1",
-    "axios": "^1.5.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^10.16.4",
-    "lucide-react": "^0.279.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.45.4",
-    "react-router-dom": "^6.15.0",
-    "tailwindcss": "^3.3.3",
-    "zustand": "^4.5.7"
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@types/node": "^20.5.9",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.4",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9"
-  },
-  "keywords": [
-    "fintech",
-    "lending",
-    "defi",
-    "arbitrum",
-    "desktop"
-  ],
-  "author": "Cody Lange <cody@unitylend.com>",
-  "license": "MIT"
+    "@types/jquery": "^3.5.33"
+  }
 }

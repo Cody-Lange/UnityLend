@@ -1,67 +1,58 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Toaster } from '@/components/ui/toaster'
-import { useAuthStore } from '@/stores/authStore'
-
-// Pages
-import LandingPage from '@/components/LandingPage'
-import LoginPage from '@/pages/LoginPage'
-import DashboardPage from '@/pages/DashboardPage'
-import LoanApplicationPage from '@/pages/LoanApplicationPage'
-import LoanDetailsPage from '@/pages/LoanDetailsPage'
-import ProfilePage from '@/pages/ProfilePage'
-
-// Layout
-import Layout from '@/components/Layout'
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
-    },
-  },
-})
+import React, { useEffect } from 'react';
+import './App.css';
+import { initializeWebflow } from './utils/webflow';
+import { useWebflowAnimations } from './hooks/useWebflowAnimations';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import LogoStrip from './components/LogoStrip';
+import WhyChooseUs from './components/WhyChooseUs';
+import Services from './components/Services';
+import Mission from './components/Mission';
+import Impact from './components/Impact';
+import CallToAction from './components/CallToAction';
+import Testimonials from './components/Testimonials';
+import Features from './components/Features';
+import ResourceCenter from './components/ResourceCenter';
+import Footer from './components/Footer';
 
 function App() {
-  const { isAuthenticated } = useAuthStore()
+  // Initialize custom animations
+  useWebflowAnimations();
+
+  useEffect(() => {
+    // Initialize Webflow for sliders only (without conflicting animations)
+    const timer = setTimeout(() => {
+      console.log('Initializing Webflow for sliders...');
+      
+      // Initialize only slider functionality
+      if (window.Webflow) {
+        window.Webflow.ready();
+      }
+      
+      console.log('Webflow slider initialization complete');
+    }, 500); // Delay to ensure components are mounted
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/" element={<LandingPage />} />
-            <Route 
-              path="/login" 
-              element={
-                !isAuthenticated ? <LoginPage /> : <Navigate to="/dashboard" replace />
-              } 
-            />
-            
-            {/* Protected Routes */}
-            <Route 
-              path="/app" 
-              element={
-                isAuthenticated ? <Layout /> : <Navigate to="/login" replace />
-              }
-            >
-              <Route index element={<Navigate to="/app/dashboard" replace />} />
-              <Route path="dashboard" element={<DashboardPage />} />
-              <Route path="apply" element={<LoanApplicationPage />} />
-              <Route path="loans/:id" element={<LoanDetailsPage />} />
-              <Route path="profile" element={<ProfilePage />} />
-            </Route>
-            
-            {/* Catch all route */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </div>
-        <Toaster />
-      </Router>
-    </QueryClientProvider>
-  )
+    <div className="App">
+      <div className="page-wrapper">
+        <Header />
+        <Hero />
+        <LogoStrip />
+        <WhyChooseUs />
+        <Services />
+        <Mission />
+        <Impact />
+        <CallToAction />
+        <Testimonials />
+        <Features />
+        <ResourceCenter />
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

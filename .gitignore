@@ -91,3 +91,5 @@ staticfiles/
 .local
 **/.local
 
+# Template Files 
+**/*.codys-radical-site-e0e90d.webflow/
