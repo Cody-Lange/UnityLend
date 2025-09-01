@@ -1,0 +1,10 @@
+{
+  "build": {
+    "command": "cd react_web_app && npm install && npm run build",
+    "cwd": ".",
+    "publish": "react_web_app/build"
+  },
+  "env": {
+    "NODE_VERSION": "18"
+  }
+}

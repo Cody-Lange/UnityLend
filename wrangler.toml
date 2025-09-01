@@ -1,0 +1,13 @@
+name = "unitylend"
+compatibility_date = "2023-06-07"
+
+[env.production]
+name = "unitylend"
+
+[[env.production.routes]]
+pattern = "*"
+
+[build]
+command = "cd react_web_app && npm install && npm run build"
+cwd = "."
+publish = "react_web_app/build"
