@@ -30,11 +30,10 @@ const Mission: React.FC = () => {
           className="full-width-image-right---image-container"
         >
           <img 
-            src="/images/the-mission-behind-our-company-image-bankly-webflow-ecommerce-template.jpg" 
+            src="/images/BlackBroBot.png" 
             loading="eager" 
             sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px" 
-            srcSet="/images/the-mission-behind-our-company-image-bankly-webflow-ecommerce-template-p-500.jpeg 500w, /images/the-mission-behind-our-company-image-bankly-webflow-ecommerce-template-p-800.jpeg 800w, /images/the-mission-behind-our-company-image-bankly-webflow-ecommerce-template-p-1080.jpeg 1080w, /images/the-mission-behind-our-company-image-bankly-webflow-ecommerce-template.jpg 1468w" 
-            alt="The Mission Behind Our Company - UnityLend" 
+            alt="The Black BroBot - Frat Boy Financial Mascot" 
             className="full-width-image-right---image" 
           />
         </div>
