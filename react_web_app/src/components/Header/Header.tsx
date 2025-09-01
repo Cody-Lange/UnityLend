@@ -101,7 +101,6 @@ const Header: React.FC = () => {
                 onClick={(e) => { e.preventDefault(); setIsCartOpen(!isCartOpen); }}
                 data-node-type="commerce-cart-open-link" 
                 className="w-commerce-commercecartopenlink cart-button w-inline-block" 
-                role="button" 
                 aria-haspopup="dialog" 
                 aria-label="Open cart"
                 style={{ border: 'none', background: 'none', padding: 0, display: 'inline-flex', alignItems: 'center' }}
@@ -121,7 +120,6 @@ const Header: React.FC = () => {
                         onClick={(e) => { e.preventDefault(); setIsCartOpen(false); }}
                         data-node-type="commerce-cart-close-link" 
                         className="w-commerce-commercecartcloselink w-inline-block" 
-                        role="button" 
                         aria-label="Close cart"
                         style={{ border: 'none', background: 'none', padding: 0 }}
                       >
