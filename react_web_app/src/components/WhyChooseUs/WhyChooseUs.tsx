@@ -4,23 +4,23 @@ const WhyChooseUs: React.FC = () => {
   const reasons = [
     {
       id: "01",
-      title: "DEEP FUCKING VALUE",
-      description: "Whatever your banking needs are, take advantage of our lower interest rates."
+      title: "Fair Rates",
+      description: "Loans from 5-10% APR for all your needs."
     },
     {
       id: "02", 
-      title: "Easier than Delta Zeta bitches",
-      description: "Crack open a cold one and take out a loan in few steps. Ignore all that AI crypto technical stuff."
+      title: "Fast Approvals",
+      description: "Apply in minutes, get decisions quickly."
     },
     {
       id: "03",
-      title: "Brothers gotchu covered", 
-      description: "Who do you know here? 24/7 account monitoring and routine audits keep the vibes high."
+      title: "Transparent Terms", 
+      description: "No hidden fees or rollover traps."
     },
     {
       id: "04",
-      title: "Brothers from all walks of life",
-      description: "By bringing affordable rates to the masses, the boys are banking the unbanked"
+      title: "Future-Ready Finance.",
+      description: "Powered by blockchain liquidity and AI-driven risk models."
     }
   ];
 

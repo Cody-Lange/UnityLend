@@ -12,18 +12,18 @@ const Hero: React.FC = () => {
           className="inner-container _46 _100-tablet"
         >
           <h1 className="display-1 color-neutral-100 mg-bottom-40px">
-            Low interest rates for the boys 🍻
+            Fair, Fast, Affordable Credit
           </h1>
           <div className="mg-bottom-64px">
             <div className="grid-2-columns gap-40px _2-col-mbl">
               <div id="w-node-ca881248-8c1b-2bfc-3c04-0bfa875bf691-89416502" className="border-bottom-1px-neutral-600">
                 <p id="w-node-_5a4e21d2-7980-00d5-6e44-4e042093b466-89416502" className="color-neutral-300 mg-bottom-56px mg-bottom-24px-mbl">
-                  New age decentralized investment bank and financial services holding company — ran by male manipulators for the bitches.
+                  AI-driven lending with transparent rates and instant approvals.
                 </p>
               </div>
               <div id="w-node-e925f935-ec81-0d27-3831-75f08e656fa9-89416502" className="border-bottom-1px-neutral-600">
                 <p id="w-node-e925f935-ec81-0d27-3831-75f08e656faa-89416502" className="color-neutral-300 mg-bottom-56px mg-bottom-24px-mbl">
-                  Wanna shotgun a beer???
+                  Powered by blockchain liquidity, designed for trust.
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               href="/contact" 
               className="link-wrapper white w-inline-block"
             >
-              <div className="link-text text-100 text-uppercase">Contact sales</div>
+              <div className="link-text text-100 text-uppercase">Learn More</div>
               <div className="line-square-icon link-icon-right"></div>
             </a>
           </div>

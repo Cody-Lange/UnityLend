@@ -12,6 +12,67 @@ code {
     monospace;
 }
 
+/* Keep the row visible and tidy */
+.logo-strip {
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 4vw, 2rem);     /* Responsive spacing using rem */
+  padding: 0 1rem;                 /* rem-based padding */
+}
+
+/* Ensure every logo actually shows up with responsive sizing */
+.partner-logo {
+  display: block;
+  height: clamp(2rem, 6vw, 3.5rem);   /* Bigger and more responsive: ~32px to ~56px */
+  width: auto;
+  max-width: clamp(8rem, 25vw, 14rem); /* Responsive max-width: ~128px to ~224px */
+  opacity: 0.7;                     /* Start with lower opacity for better hover effect */
+  transition: all 0.3s ease;       /* Smooth transitions */
+  filter: grayscale(20%);           /* Subtle desaturation */
+}
+
+/* Hover effects */
+.partner-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);            /* Full color on hover */
+  transform: translateY(-0.125rem); /* Subtle lift effect in rem */
+}
+
+/* Make white-on-transparent SVGs visible on light backgrounds */
+.partner-logo--invert {
+  filter: brightness(0) invert(1) grayscale(20%);
+}
+
+.partner-logo--invert:hover {
+  filter: brightness(0) invert(1) grayscale(0%);
+  transform: translateY(-0.125rem);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 48rem) {  /* 768px equivalent */
+  .logo-strip {
+    gap: 0.75rem;              /* 12px equivalent */
+    padding: 0 0.5rem;         /* 8px equivalent */
+  }
+  
+  .partner-logo {
+    height: 1.75rem;           /* ~28px - bigger than before */
+    max-width: 7rem;           /* ~112px */
+  }
+}
+
+/* Large screens */
+@media (min-width: 75rem) {   /* 1200px equivalent */
+  .logo-strip {
+    gap: 2.5rem;              /* 40px equivalent */
+  }
+  
+  .partner-logo {
+    height: 3rem;              /* ~48px - much bigger */
+    max-width: 12rem;          /* ~192px */
+  }
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0px);
