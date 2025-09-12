@@ -4,7 +4,6 @@ import { usePageLoad } from '../../hooks/usePageLoad';
 
 const Testimonials: React.FC = () => {
   const loaded = usePageLoad(100);
-  const sliderRef = useRef<HTMLDivElement>(null);
   
   // Add scroll animations for the testimonials section
   const titleRef = useScrollAnimation<HTMLDivElement>({
@@ -81,7 +80,7 @@ const Testimonials: React.FC = () => {
     const timer = setTimeout(initSlider, 200);
     
     return () => clearTimeout(timer);
-  }, []);
+  }, [sliderContainerRef]);
 
   return (
     <div className={`section overflow-hidden ${loaded ? 'section-loaded' : ''}`}>

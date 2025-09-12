@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { usePageLoad } from '../../hooks/usePageLoad';
 import './Features.css';
 
@@ -92,6 +92,7 @@ const Features: React.FC = () => {
             {tabs.map((tab, index) => (
               <a 
                 key={tab.id}
+                href="#"
                 data-w-tab={tab.id} 
                 data-w-id={`a397360f-d083-4066-5604-2abfb570f7${tab.id === 'Tab 1' ? 'ab' : tab.id === 'Tab 2' ? 'b7' : 'c3'}`}
                 className={`tab-menu-large sibling-opacity-item w-inline-block w-tab-link${activeTab === tab.id ? ' w--current' : ''}`}
