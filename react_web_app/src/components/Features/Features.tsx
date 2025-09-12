@@ -1,7 +1,38 @@
 import React, { useState } from 'react';
+import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
+import { usePageLoad } from '../../hooks/usePageLoad';
+import './Features.css';
 
 const Features: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Tab 1');
+  const loaded = usePageLoad(100);
+
+  // Match hero section animation style exactly - 10% upward movement
+  const headerRef = useScrollAnimation({ 
+    delay: 0,
+    distance: '10%', // Same as hero section
+    duration: 800, // Same timing as hero
+    threshold: 0.1,
+    rootMargin: '0px 0px 0px 0px'
+  });
+  
+  const descriptionRef = useScrollAnimation({ 
+    delay: 200, // Slight stagger
+    distance: '10%', // Same movement pattern
+    duration: 800 // Same timing
+  });
+  
+  const tabsContainerRef = useScrollAnimation({ 
+    delay: 400, // More stagger
+    distance: '10%', // Consistent movement
+    duration: 800
+  });
+  
+  const imageRef = useScrollAnimation({ 
+    delay: 600, // Final element
+    distance: '0px', // Images only fade like hero
+    duration: 800
+  });
 
   const tabs = [
     {
@@ -28,21 +59,21 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <div className="section bg-neutral-200">
+    <div className={`section bg-neutral-200 ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns gap-row-16px mg-bottom-48px">
           <h2 
+            ref={headerRef}
             id="w-node-_42f45d1a-fbbc-dc2b-12d1-d744b720c1f1-89416502" 
             data-w-id="42f45d1a-fbbc-dc2b-12d1-d744b720c1f1" 
-            style={{ opacity: 1 }} 
             className="display-2 mg-bottom-0"
           >
             Why we're the sickest financial bros in the game?
           </h2>
           <div 
+            ref={descriptionRef}
             id="w-node-_3b65bd0a-c6b9-4245-efe8-bf0e680c2544-89416502" 
             data-w-id="3b65bd0a-c6b9-4245-efe8-bf0e680c2544" 
-            style={{ opacity: 1 }} 
             className="inner-container _500px _100-mbl"
           >
             <p className="color-neutral-700 mg-bottom-0">
@@ -53,15 +84,14 @@ const Features: React.FC = () => {
         
         <div data-current={activeTab} data-easing="ease" data-duration-in="300" data-duration-out="100" className="grid-2-columns w-tabs">
           <div 
+            ref={tabsContainerRef}
             id="w-node-a397360f-d083-4066-5604-2abfb570f7aa-89416502" 
             data-w-id="a397360f-d083-4066-5604-2abfb570f7aa" 
-            style={{ opacity: 1 }} 
             className="inner-container _550px w-tab-menu"
           >
-            {tabs.map((tab) => (
-              <button 
+            {tabs.map((tab, index) => (
+              <a 
                 key={tab.id}
-                type="button"
                 data-w-tab={tab.id} 
                 data-w-id={`a397360f-d083-4066-5604-2abfb570f7${tab.id === 'Tab 1' ? 'ab' : tab.id === 'Tab 2' ? 'b7' : 'c3'}`}
                 className={`tab-menu-large sibling-opacity-item w-inline-block w-tab-link${activeTab === tab.id ? ' w--current' : ''}`}
@@ -69,7 +99,7 @@ const Features: React.FC = () => {
                   e.preventDefault();
                   setActiveTab(tab.id);
                 }}
-                style={{ border: 'none', background: 'none', padding: 0, width: '100%', textAlign: 'left' }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <div className="accordion-item-wrapper tab-menu-item">
                   <div className="accordion-content-wrapper v2">
@@ -90,23 +120,19 @@ const Features: React.FC = () => {
                       }} 
                       className="acordion-body"
                     >
-                      {activeTab === tab.id && (
-                        <>
-                          <div className="accordion-spacer"></div>
-                          <p className="color-neutral-700 mg-bottom-0">{tab.description}</p>
-                        </>
-                      )}
+                      <div className="accordion-spacer"></div>
+                      <p className="color-neutral-700 mg-bottom-0">{tab.description}</p>
                     </div>
                   </div>
                 </div>
-              </button>
+              </a>
             ))}
           </div>
           
           <div 
+            ref={imageRef}
             id="w-node-a397360f-d083-4066-5604-2abfb570f7cf-89416502" 
             data-w-id="a397360f-d083-4066-5604-2abfb570f7cf" 
-            style={{ opacity: 1 }} 
             className="inner-container _614px w-tab-content"
           >
             {tabs.map((tab) => (

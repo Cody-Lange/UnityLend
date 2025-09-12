@@ -1,0 +1,91 @@
+/* Original Webflow Hero Animation - Entire Section Slides Up */
+/* Hero uses viewport height with responsive rem padding */
+
+/* Hero section starts with proper fade-in */
+.top-section.full-width-image-right.v2 {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  /* Keep viewport height for Hero - this is the exception */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Convert Webflow's fixed padding to responsive rem but keep viewport height */
+  padding-top: 14rem !important;    /* 224px → 14rem */
+  padding-bottom: 12.125rem !important; /* 194px → 12.125rem */
+}
+
+.top-section.full-width-image-right.v2.hero-loaded {
+  opacity: 1;
+}
+
+/* Responsive Hero spacing - matches Webflow breakpoints */
+@media screen and (max-width: 991px) {
+  .top-section.full-width-image-right.v2 {
+    padding-top: 11.125rem !important;  /* 178px → 11.125rem */
+    padding-bottom: 8.75rem !important;  /* 140px → 8.75rem */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .top-section.full-width-image-right.v2 {
+    padding-top: 9.625rem !important;   /* 154px → 9.625rem */
+    padding-bottom: 6.75rem !important;  /* 108px → 6.75rem */
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .top-section.full-width-image-right.v2 {
+    padding-top: 8.625rem !important;   /* 138px → 8.625rem */
+    padding-bottom: 5.875rem !important; /* 94px → 5.875rem */
+  }
+}
+
+/* Entire content container slides up together - exactly like Webflow */
+[data-w-id="a22c0ce7-c5f2-252a-11a6-aa2c0b174c21"] {
+  /* Initial state: entire section starts 10% below with opacity 0 */
+  opacity: 0;
+  transform: translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+  transition: opacity 800ms ease, transform 800ms ease;
+  will-change: transform, opacity;
+}
+
+/* All child elements inherit the parent animation - no individual animations */
+[data-w-id="a22c0ce7-c5f2-252a-11a6-aa2c0b174c21"] * {
+  /* Ensure child elements don't have conflicting animations */
+  transform: none !important;
+  opacity: inherit;
+}
+
+/* Images fade only (no movement) like original */
+[data-w-id="54fc40eb-0d5a-ecdd-340e-ff3c849a32c1"] {
+  opacity: 0;
+  transition: opacity 800ms ease;
+  will-change: opacity;
+}
+
+/* When scroll animation triggers - entire section slides into place */
+[data-scroll-animated] [data-w-id="a22c0ce7-c5f2-252a-11a6-aa2c0b174c21"],
+[data-w-id="a22c0ce7-c5f2-252a-11a6-aa2c0b174c21"][data-scroll-animated] {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+}
+
+[data-scroll-animated] [data-w-id="54fc40eb-0d5a-ecdd-340e-ff3c849a32c1"],
+[data-w-id="54fc40eb-0d5a-ecdd-340e-ff3c849a32c1"][data-scroll-animated] {
+  opacity: 1;
+}
+
+/* Ensure the entire hero content moves as one unit */
+.inner-container._46._100-tablet {
+  /* This container holds all the content and animates as one */
+  position: relative;
+}
+
+/* All text elements, buttons, and content inside move together */
+.inner-container._46._100-tablet h1,
+.inner-container._46._100-tablet .mg-bottom-64px,
+.inner-container._46._100-tablet .buttons-row {
+  /* No individual transforms - they all move with parent container */
+  transform: none;
+  transition: none;
+}

@@ -1,0 +1,47 @@
+/* Features Section - Match Hero Animation Style */
+
+/* All animated elements start with proper initial state */
+[data-w-id="42f45d1a-fbbc-dc2b-12d1-d744b720c1f1"],
+[data-w-id="3b65bd0a-c6b9-4245-efe8-bf0e680c2544"],
+[data-w-id="a397360f-d083-4066-5604-2abfb570f7aa"],
+[data-w-id="a397360f-d083-4066-5604-2abfb570f7cf"] {
+  /* Initial state: opacity 0 + 10% upward offset like hero */
+  opacity: 0;
+  transform: translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+  transition: opacity 800ms ease, transform 800ms ease;
+  will-change: transform, opacity;
+}
+
+/* Image container only fades (no movement) like hero images */
+[data-w-id="a397360f-d083-4066-5604-2abfb570f7cf"] {
+  transform: none; /* Override - images don't move */
+  transition: opacity 800ms ease;
+}
+
+/* When scroll animation triggers - elements slide into place */
+[data-scroll-animated] [data-w-id="42f45d1a-fbbc-dc2b-12d1-d744b720c1f1"],
+[data-w-id="42f45d1a-fbbc-dc2b-12d1-d744b720c1f1"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="3b65bd0a-c6b9-4245-efe8-bf0e680c2544"],
+[data-w-id="3b65bd0a-c6b9-4245-efe8-bf0e680c2544"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="a397360f-d083-4066-5604-2abfb570f7aa"],
+[data-w-id="a397360f-d083-4066-5604-2abfb570f7aa"][data-scroll-animated] {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+}
+
+/* Image container final state */
+[data-scroll-animated] [data-w-id="a397360f-d083-4066-5604-2abfb570f7cf"],
+[data-w-id="a397360f-d083-4066-5604-2abfb570f7cf"][data-scroll-animated] {
+  opacity: 1;
+}
+
+/* Let Webflow CSS handle all the tab styling - just ensure icon font works */
+.line-square-icon.tab-menu-icon {
+  font-family: 'Line Square Icons', sans-serif;
+}
+
+/* Add the down arrow icon content - exactly as Webflow expects */
+.line-square-icon.tab-menu-icon:before {
+  content: '\e80f'; /* chevron-down unicode from the icon font */
+  display: inline-block;
+}

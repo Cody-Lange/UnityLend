@@ -1,0 +1,60 @@
+/* Testimonials Section Layout - Match Webflow Template Exactly */
+/* Exclude from viewport height system and use original Webflow spacing */
+
+.section.overflow-hidden {
+  /* Override viewport height system for Testimonials */
+  min-height: auto !important;
+  padding-top: 15.5rem !important; /* 248px converted to rem for responsiveness */
+  padding-bottom: 15.5rem !important;
+  display: block !important; /* Reset to original layout behavior */
+  align-items: initial !important; /* Reset flexbox centering */
+}
+
+/* Ensure testimonials content is properly laid out */
+.section.overflow-hidden .container-default {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section.overflow-hidden .grid-2-columns {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.section.overflow-hidden .slider-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 0 !important;
+}
+
+/* Responsive breakpoints matching sectionSpacing.css */
+@media screen and (max-width: 991px) {
+  .section.overflow-hidden {
+    padding-top: 11.25rem !important; /* 180px */
+    padding-bottom: 11.25rem !important;
+  }
+  
+  .section.overflow-hidden .grid-2-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section.overflow-hidden {
+    padding-top: 7.5rem !important; /* 120px */
+    padding-bottom: 7.5rem !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .section.overflow-hidden {
+    padding-top: 6.25rem !important; /* 100px */
+    padding-bottom: 6.25rem !important;
+  }
+}

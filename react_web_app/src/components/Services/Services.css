@@ -1,0 +1,53 @@
+/* Services Section - Match Features Animation Style Exactly */
+
+/* All animated elements start with proper initial state */
+[data-w-id="46661274-fa9f-54be-d62f-73828c40a65e"],
+[data-w-id="140df88d-6ef9-8f83-f7d1-a8dee8a7c380"],
+[data-w-id="568a2e8c-c51f-454f-0f54-6bef9fad1350"],
+[data-w-id="79613225-6546-d32f-b7c6-1ce80d221abf"],
+[data-w-id="e8f9480f-7686-f995-1fcb-4f1260a556eb"],
+[data-w-id="05d57148-df4b-0ab0-2f91-7c0e1355dcbf"],
+[data-w-id="9489bd49-d366-12af-a2d3-fe483ef4d9cc"],
+[data-w-id="e206382f-a730-73fa-d5cf-03026f7ec999"],
+[data-w-id="1a8ae6d5-0d4a-2151-a579-1bb77c52dbf1"] {
+  /* Initial state: opacity 0 + 10% upward offset like Features */
+  opacity: 0;
+  transform: translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+  transition: opacity 800ms ease, transform 800ms ease;
+  will-change: transform, opacity;
+}
+
+/* Credit card section only fades (special case) */
+[data-w-id="568a2e8c-c51f-454f-0f54-6bef9fad1350"] {
+  transform: none; /* Override - credit card section doesn't move */
+  transition: opacity 800ms ease;
+}
+
+/* When scroll animation triggers - elements slide into place */
+[data-scroll-animated] [data-w-id="46661274-fa9f-54be-d62f-73828c40a65e"],
+[data-w-id="46661274-fa9f-54be-d62f-73828c40a65e"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="140df88d-6ef9-8f83-f7d1-a8dee8a7c380"],
+[data-w-id="140df88d-6ef9-8f83-f7d1-a8dee8a7c380"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="79613225-6546-d32f-b7c6-1ce80d221abf"],
+[data-w-id="79613225-6546-d32f-b7c6-1ce80d221abf"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="e8f9480f-7686-f995-1fcb-4f1260a556eb"],
+[data-w-id="e8f9480f-7686-f995-1fcb-4f1260a556eb"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="05d57148-df4b-0ab0-2f91-7c0e1355dcbf"],
+[data-w-id="05d57148-df4b-0ab0-2f91-7c0e1355dcbf"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="9489bd49-d366-12af-a2d3-fe483ef4d9cc"],
+[data-w-id="9489bd49-d366-12af-a2d3-fe483ef4d9cc"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="e206382f-a730-73fa-d5cf-03026f7ec999"],
+[data-w-id="e206382f-a730-73fa-d5cf-03026f7ec999"][data-scroll-animated],
+[data-scroll-animated] [data-w-id="1a8ae6d5-0d4a-2151-a579-1bb77c52dbf1"],
+[data-w-id="1a8ae6d5-0d4a-2151-a579-1bb77c52dbf1"][data-scroll-animated] {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+}
+
+/* Credit card section final state */
+[data-scroll-animated] [data-w-id="568a2e8c-c51f-454f-0f54-6bef9fad1350"],
+[data-w-id="568a2e8c-c51f-454f-0f54-6bef9fad1350"][data-scroll-animated] {
+  opacity: 1;
+}
+
+/* Let Webflow CSS handle all styling - minimal overrides */

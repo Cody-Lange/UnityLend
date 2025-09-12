@@ -73,6 +73,43 @@ code {
   }
 }
 
+/* Scroll animation styles */
+.animate-in {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Disable continuous animations for hero cards after they settle */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-card-settle {
+    animation: settleCard 2s ease-out forwards;
+  }
+}
+
+@keyframes settleCard {
+  0% {
+    transform: translate3d(0, 10%, 0);
+    opacity: 0;
+  }
+  60% {
+    transform: translate3d(0, -2%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0px);

@@ -1,6 +1,11 @@
 import React from 'react';
+import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
+import { usePageLoad } from '../../hooks/usePageLoad';
 
 const WhyChooseUs: React.FC = () => {
+  const loaded = usePageLoad(100);
+  const imageRef = useScrollAnimation({ delay: 100 });
+  const contentRef = useStaggerAnimation(150);
   const reasons = [
     {
       id: "01",
@@ -25,13 +30,13 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <div className="section pd-bottom-180px">
+    <div className={`section pd-bottom-180px ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns _1-col-tablet gap-row-64px">
           <div 
+            ref={imageRef}
             id="w-node-_7dd9de35-5a11-3324-1e4f-fd4aeafd7862-89416502" 
-            data-w-id="7dd9de35-5a11-3324-1e4f-fd4aeafd7862" 
-            style={{ opacity: 0 }} 
+            data-w-id="7dd9de35-5a11-3324-1e4f-fd4aeafd7862"
             className="inner-container _564px _100-tablet"
           >
             <div className="flex height-100">
@@ -46,11 +51,11 @@ const WhyChooseUs: React.FC = () => {
             </div>
           </div>
           <div 
+            ref={contentRef}
             id="w-node-_76912a52-420a-6399-95d3-44a90c1ae63b-89416502" 
-            data-w-id="76912a52-420a-6399-95d3-44a90c1ae63b" 
-            style={{ opacity: 0 }}
+            data-w-id="76912a52-420a-6399-95d3-44a90c1ae63b"
           >
-            <div className="inner-container _568px _100-tablet">
+            <div className="inner-container _568px _100-tablet" data-animate>
               <h2 className="display-2 mg-bottom-32px">Why rush Frat Boy Financial?</h2>
             </div>
             <div className="grid-2-columns gap-row-56px _2-col-mbl">
@@ -62,6 +67,7 @@ const WhyChooseUs: React.FC = () => {
                          index === 2 ? '11fbd28e-b7ad-1864-66b0-16439224bc65' : 
                          'f27d5ffc-bf8d-2aec-be37-3607ab0dc37b'}-89416502`} 
                   className="inner-container _264px _100-mbp"
+                  data-animate
                 >
                   <div className="heading-h4-size mg-bottom-12px">{reason.id}</div>
                   <h3 className="display-3 mg-bottom-12px">{reason.title}</h3>

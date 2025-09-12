@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { usePageLoad } from '../../hooks/usePageLoad';
 
 const Footer: React.FC = () => {
+  const loaded = usePageLoad(100);
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -53,7 +55,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <div className="footer-section">
+    <div className={`footer-section ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns _1-col-tablet">
           <div id="w-node-_9a042dcd-8c2c-a0af-5e12-caedcf77f7cc-cf77f7c9" className="hidden-on-desktop show-on-tablet mg-bottom-64px-tablet">

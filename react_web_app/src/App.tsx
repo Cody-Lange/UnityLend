@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import './styles/pageLoad.css';
+import './components/Hero/Hero.css';
+import './styles/logoStripCentering.css';
+import './styles/testimonialsLayout.css';
 import { useWebflowAnimations } from './hooks/useWebflowAnimations';
 import Header from './components/Header';
 import Hero from './components/Hero';

@@ -1,7 +1,32 @@
 import React, { useEffect, useRef } from 'react';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { usePageLoad } from '../../hooks/usePageLoad';
 
 const Testimonials: React.FC = () => {
+  const loaded = usePageLoad(100);
   const sliderRef = useRef<HTMLDivElement>(null);
+  
+  // Add scroll animations for the testimonials section
+  const titleRef = useScrollAnimation<HTMLDivElement>({
+    distance: '80px',
+    duration: 1800,
+    delay: 100,
+    threshold: 0.2
+  });
+  
+  const buttonRef = useScrollAnimation<HTMLDivElement>({
+    distance: '80px', 
+    duration: 1800,
+    delay: 200,
+    threshold: 0.2
+  });
+  
+  const sliderContainerRef = useScrollAnimation<HTMLDivElement>({
+    distance: '100px',
+    duration: 2000,
+    delay: 300,
+    threshold: 0.15
+  });
 
   const testimonials = [
     {
@@ -33,7 +58,7 @@ const Testimonials: React.FC = () => {
   useEffect(() => {
     // Ensure slider is visible and functional
     const initSlider = () => {
-      const sliderElement = sliderRef.current;
+      const sliderElement = sliderContainerRef.current;
       if (sliderElement) {
         // Make sure slider is visible
         sliderElement.style.opacity = '1';
@@ -59,13 +84,13 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <div className="section overflow-hidden">
+    <div className={`section overflow-hidden ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns mg-bottom-72px">
           <div 
+            ref={titleRef}
             id="w-node-ff664468-fd21-5739-d96b-67abe2af78f7-89416502" 
             data-w-id="ff664468-fd21-5739-d96b-67abe2af78f7" 
-            style={{ opacity: 0 }} 
             className="inner-container _424px"
           >
             <div 
@@ -76,9 +101,9 @@ const Testimonials: React.FC = () => {
             </div>
           </div>
           <div 
+            ref={buttonRef}
             id="w-node-fa3a8b18-cf09-984f-cf05-354b94eb8094-89416502" 
             data-w-id="fa3a8b18-cf09-984f-cf05-354b94eb8094" 
-            style={{ opacity: 0 }} 
             className="mg-bottom-16px mg-bottom-0-mbl"
           >
             <a href="/about" className="btn-primary w-button">About us</a>
@@ -86,7 +111,7 @@ const Testimonials: React.FC = () => {
         </div>
         
         <div 
-          ref={sliderRef}
+          ref={sliderContainerRef}
           data-delay="4000" 
           data-animation="slide" 
           className="slider-wrapper arrows-bottom-edge w-slider" 

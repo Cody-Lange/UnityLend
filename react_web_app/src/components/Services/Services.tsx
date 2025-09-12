@@ -1,6 +1,34 @@
 import React from 'react';
+import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
+import { usePageLoad } from '../../hooks/usePageLoad';
+import './Services.css';
 
 const Services: React.FC = () => {
+  const loaded = usePageLoad(100);
+  
+  // Match Features section animation style exactly - 10% upward movement
+  const headerRef = useScrollAnimation({ 
+    delay: 0,
+    distance: '10%', // Same as Features/Hero section
+    duration: 800, // Same timing as Features/Hero
+    threshold: 0.1,
+    rootMargin: '0px 0px 0px 0px'
+  });
+  
+  const buttonRef = useScrollAnimation({ 
+    delay: 200, // Slight stagger
+    distance: '10%', // Same movement pattern
+    duration: 800 // Same timing
+  });
+  
+  const creditCardRef = useScrollAnimation({ 
+    delay: 400, // More stagger
+    distance: '10%', // Consistent movement
+    duration: 800
+  });
+  
+  const servicesContainerRef = useStaggerAnimation(150); // Staggered service cards
+  
   const services = [
     {
       id: "79613225-6546-d32f-b7c6-1ce80d221abf",
@@ -41,29 +69,29 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="section pd-top-180px">
+    <div className={`section pd-top-180px ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns _1-2fr---1fr mg-bottom-40px">
           <h2 
+            ref={headerRef}
             id="w-node-_46661274-fa9f-54be-d62f-73828c40a65e-89416502" 
             data-w-id="46661274-fa9f-54be-d62f-73828c40a65e" 
-            style={{ opacity: 1 }} 
             className="display-2 mg-bottom-0"
           >
             Browse our set of banking services and offerings
           </h2>
           <div 
+            ref={buttonRef}
             id="w-node-_140df88d-6ef9-8f83-f7d1-a8dee8a7c380-89416502" 
-            data-w-id="140df88d-6ef9-8f83-f7d1-a8dee8a7c380" 
-            style={{ opacity: 1 }}
+            data-w-id="140df88d-6ef9-8f83-f7d1-a8dee8a7c380"
           >
             <a href="/pricing" className="btn-primary w-button">Get started</a>
           </div>
         </div>
         
         <div 
+          ref={creditCardRef}
           data-w-id="568a2e8c-c51f-454f-0f54-6bef9fad1350" 
-          style={{ opacity: 1 }} 
           className="card credit-cards-section"
         >
           <div>
@@ -97,13 +125,13 @@ const Services: React.FC = () => {
           />
         </div>
         
-        <div className="grid-3-columns gap-row-104px">
+        <div ref={servicesContainerRef} className="grid-3-columns gap-row-104px">
           {services.map((service, index) => (
             <div 
               key={service.id}
               id={`w-node-_${service.id}-89416502`} 
               data-w-id={service.id} 
-              style={index > 0 ? { opacity: 1 } : {}} 
+              data-animate
               className="inner-container _362px _100-mbl"
             >
               <div 

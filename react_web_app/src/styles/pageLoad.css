@@ -1,0 +1,34 @@
+/* Global Page Load Animation - Applied to all components */
+
+/* All sections start hidden with smooth fade-in */
+.page-section {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.page-section.section-loaded {
+  opacity: 1;
+}
+
+/* Alternative class names for different components */
+.component-container {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.component-container.component-loaded {
+  opacity: 1;
+}
+
+/* Ensure smooth loading across all page components */
+.section,
+.top-section {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.section.section-loaded,
+.top-section.section-loaded,
+.top-section.hero-loaded {
+  opacity: 1;
+}

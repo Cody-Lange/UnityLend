@@ -1,0 +1,31 @@
+/* Template Accurate Styling - Only Essential Overrides */
+/* This file provides minimal, necessary overrides to match original Webflow template */
+
+/* Services section - ensure no vertical centering conflicts */
+.section.pd-top-180px {
+  /* Let template handle all layout naturally - no flexbox centering */
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+}
+
+/* Mission section container adjustments for image positioning */
+.section.bg-neutral-200.position-relative---z-index-1 .container-default {
+  /* Ensure container doesn't interfere with image positioning */
+  padding-right: calc(50vw - 2rem) !important; /* Make room for absolute image with padding */
+}
+
+/* Ensure all sections use template layout, not custom centering */
+.section:not(.hero-section) {
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  min-height: unset !important;
+}
+
+/* Mobile responsiveness - remove container padding override */
+@media screen and (max-width: 991px) {
+  .section.bg-neutral-200.position-relative---z-index-1 .container-default {
+    padding-right: 1.5rem !important; /* Reset to normal padding on mobile */
+  }
+}

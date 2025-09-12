@@ -1,6 +1,27 @@
 import React from 'react';
+import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
+import { usePageLoad } from '../../hooks/usePageLoad';
 
 const ResourceCenter: React.FC = () => {
+  const loaded = usePageLoad(100);
+  
+  const titleRef = useScrollAnimation<HTMLDivElement>({
+    distance: '60px',
+    duration: 1800,
+    delay: 100
+  });
+  
+  const buttonRef = useScrollAnimation<HTMLDivElement>({
+    distance: '60px',
+    duration: 1800,
+    delay: 200
+  });
+  
+  const cardsRef = useStaggerAnimation<HTMLDivElement>(150, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -80px 0px'
+  });
+
   const blogPosts = [
     {
       id: 1,
@@ -32,28 +53,28 @@ const ResourceCenter: React.FC = () => {
   ];
 
   return (
-    <div className="section">
+    <div className={`section ${loaded ? 'section-loaded' : ''}`}>
       <div className="container-default w-container">
         <div className="grid-2-columns mg-bottom-64px">
           <div 
+            ref={titleRef}
             id="w-node-ad7252d5-de8e-0a55-e2f0-1e1505d749db-89416502" 
             data-w-id="ad7252d5-de8e-0a55-e2f0-1e1505d749db" 
-            style={{ opacity: 0 }} 
             className="pd-left-44px border-left---neutral-800-2px"
           >
             <h2 className="display-2 mg-bottom-0">Resource center</h2>
           </div>
           <div 
+            ref={buttonRef}
             id="w-node-a70d0fec-cde9-ce33-d4e6-edc84183aaa4-89416502" 
-            data-w-id="a70d0fec-cde9-ce33-d4e6-edc84183aaa4" 
-            style={{ opacity: 0 }}
+            data-w-id="a70d0fec-cde9-ce33-d4e6-edc84183aaa4"
           >
             <a href="/blog" className="btn-primary w-button">Go to resource center</a>
           </div>
         </div>
         <div 
+          ref={cardsRef}
           data-w-id="d14fb2b8-3327-7ab7-bf93-2642876a530b" 
-          style={{ opacity: 0 }} 
           className="w-dyn-list"
         >
           <div role="list" className="grid-3-columns blog-cards-v2-grid _1-col-tablet w-dyn-items">
@@ -61,6 +82,7 @@ const ResourceCenter: React.FC = () => {
               <div 
                 key={post.id}
                 data-w-id={`d14fb2b8-3327-7ab7-bf93-2642876a530${post.id === 1 ? 'd' : post.id === 2 ? 'e' : 'f'}`}
+                data-animate
                 role="listitem" 
                 className="sibling-opacity-item w-dyn-item"
               >
