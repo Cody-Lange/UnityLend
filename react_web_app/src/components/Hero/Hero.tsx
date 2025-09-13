@@ -52,12 +52,12 @@ const Hero: React.FC = () => {
             <div className="grid-2-columns gap-40px _2-col-mbl">
               <div id="w-node-ca881248-8c1b-2bfc-3c04-0bfa875bf691-89416502" className="border-bottom-1px-neutral-600">
                 <p id="w-node-_5a4e21d2-7980-00d5-6e44-4e042093b466-89416502" className="color-neutral-300 mg-bottom-56px mg-bottom-24px-mbl">
-                  Where AI meets DeFi meets absolute chaos. BlackBroBot technology with authentic frat house energy.
+                  S/O BroBot for writing most of this AI Slop.
                 </p>
               </div>
               <div id="w-node-e925f935-ec81-0d27-3831-75f08e656fa9-89416502" className="border-bottom-1px-neutral-600">
                 <p id="w-node-e925f935-ec81-0d27-3831-75f08e656faa-89416502" className="color-neutral-300 mg-bottom-56px mg-bottom-24px-mbl">
-                  Revolutionary AI-driven lending with transparent rates and instant approvals. Powered by blockchain liquidity.
+                  Ayyo fuck Dan Gilbert.
                 </p>
               </div>
             </div>
@@ -65,13 +65,15 @@ const Hero: React.FC = () => {
           
           {/* CTA buttons with original styling */}
           <div className="buttons-row">
-            <a href="/pricing" className="btn-primary white button-row w-button">Start Borrowing 🚀</a>
+            <a href="/pricing" className="btn-primary white button-row w-button">Join Whitelist</a>
             <a 
               data-w-id="a22c0ce7-c5f2-252a-11a6-aa2c0b174c2b" 
-              href="/whitepaper" 
+              href="/whitepaper.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="link-wrapper white w-inline-block"
             >
-              <div className="link-text text-100 text-uppercase">Read Whitepaper 📜</div>
+              <div className="link-text text-100 text-uppercase">Read Whitepaper</div>
               <div className="line-square-icon link-icon-right"></div>
             </a>
           </div>

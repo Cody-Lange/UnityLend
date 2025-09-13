@@ -1,0 +1,185 @@
+/* ==========================================================================
+   UnityLend React App - Consolidated Style Overrides
+   This file consolidates all React-specific styling that extends Webflow template
+   ========================================================================== */
+
+/* ==========================================================================
+   1. PAGE LOAD ANIMATIONS
+   ========================================================================== */
+
+/* Global Page Load Animation - Applied to all components */
+.page-section {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.page-section.section-loaded {
+  opacity: 1;
+}
+
+/* Alternative class names for different components */
+.component-container {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.component-container.component-loaded {
+  opacity: 1;
+}
+
+/* Ensure smooth loading across all page components */
+.section,
+.top-section {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.section.section-loaded,
+.top-section.section-loaded,
+.top-section.hero-loaded {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   2. LOGO STRIP SECTION LAYOUT
+   ========================================================================== */
+
+/* LogoStrip section should have proper height with centered content */
+.logo-strip-section-top {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  margin-top: 0 !important;
+  padding-top: 3rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Ensure the container within LogoStrip is also centered */
+.logo-strip-section-top .container-default.w-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make sure the grid layout works with centering */
+.logo-strip-section-top .w-layout-grid.grid-2-columns.logo-strip-v2 {
+  width: 100%;
+  align-items: center;
+}
+
+/* ==========================================================================
+   3. TESTIMONIALS SECTION LAYOUT
+   ========================================================================== */
+
+/* Testimonials Section Layout - Match Webflow Template Exactly */
+.section.overflow-hidden {
+  min-height: auto !important;
+  padding-top: 15.5rem !important;
+  padding-bottom: 15.5rem !important;
+  display: block !important;
+  align-items: initial !important;
+}
+
+/* Ensure testimonials content is properly laid out */
+.section.overflow-hidden .container-default {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section.overflow-hidden .grid-2-columns {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.section.overflow-hidden .slider-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 0 !important;
+}
+
+/* ==========================================================================
+   4. TEMPLATE ACCURACY FIXES
+   ========================================================================== */
+
+/* Services section - ensure no vertical centering conflicts */
+.section.pd-top-180px {
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+}
+
+/* Mission section container adjustments for image positioning */
+.section.bg-neutral-200.position-relative---z-index-1 .container-default {
+  padding-right: calc(50vw - 2rem) !important;
+}
+
+/* Ensure all sections use template layout, not custom centering */
+.section:not(.hero-section) {
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  min-height: unset !important;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet breakpoint - matches Webflow @media (max-width: 991px) */
+@media screen and (max-width: 991px) {
+  .logo-strip-section-top {
+    min-height: 180px;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .section.overflow-hidden {
+    padding-top: 11.25rem !important;
+    padding-bottom: 11.25rem !important;
+  }
+  
+  .section.overflow-hidden .grid-2-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .section.bg-neutral-200.position-relative---z-index-1 .container-default {
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Mobile landscape breakpoint - matches Webflow @media (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .logo-strip-section-top {
+    min-height: 160px;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .section.overflow-hidden {
+    padding-top: 7.5rem !important;
+    padding-bottom: 7.5rem !important;
+  }
+}
+
+/* Mobile portrait breakpoint - matches Webflow @media (max-width: 479px) */
+@media screen and (max-width: 479px) {
+  .section.overflow-hidden {
+    padding-top: 6.25rem !important;
+    padding-bottom: 6.25rem !important;
+  }
+}
+
+/* ==========================================================================
+   6. WEBFLOW BADGE HIDING
+   ========================================================================== */
+
+.w-webflow-badge {
+  display: none !important;
+}

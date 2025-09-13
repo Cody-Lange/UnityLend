@@ -25,6 +25,7 @@ const Mission: React.FC = () => {
           ref={contentRef}
           data-w-id="9a8e1854-90ee-29d4-bb8f-e756c675cc02" 
           className="inner-container _44 _100-mbl"
+          style={{ maxWidth: '100%', width: '100%' }}
         >
           <div className="inner-container _504px">
             <h2 className="display-2 mg-bottom-24px">

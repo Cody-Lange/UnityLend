@@ -24,7 +24,7 @@ const WhyChooseUs: React.FC = () => {
     },
     {
       id: "04",
-      title: "Future-Ready Finance.",
+      title: "Bitcoin > Bitches",
       description: "Powered by blockchain liquidity and AI-driven risk models."
     }
   ];
@@ -58,7 +58,13 @@ const WhyChooseUs: React.FC = () => {
             <div className="inner-container _568px _100-tablet" data-animate>
               <h2 className="display-2 mg-bottom-32px">Why rush Frat Boy Financial?</h2>
             </div>
-            <div className="grid-2-columns gap-row-56px _2-col-mbl">
+            <div className="grid-2-columns gap-row-56px _2-col-mbl" style={{ 
+              alignItems: 'flex-start', 
+              gap: '56px 40px',
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gridTemplateRows: 'auto auto'
+            }}>
               {reasons.map((reason, index) => (
                 <div 
                   key={reason.id}
@@ -68,6 +74,14 @@ const WhyChooseUs: React.FC = () => {
                          'f27d5ffc-bf8d-2aec-be37-3607ab0dc37b'}-89416502`} 
                   className="inner-container _264px _100-mbp"
                   data-animate
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'flex-start',
+                    padding: '0',
+                    margin: '0',
+                    justifySelf: 'start'
+                  }}
                 >
                   <div className="heading-h4-size mg-bottom-12px">{reason.id}</div>
                   <h3 className="display-3 mg-bottom-12px">{reason.title}</h3>
