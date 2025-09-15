@@ -1,3 +1,5 @@
+# DISCLAIMER - LARGELY "VIBE CODED" AI SLOP FOR A PROOF OF CONCEPT
+
 # UnityLend 🏦💰
 
 A fintech startup building a mobile app to provide low-interest (5-10% APR) loans to Detroit's unbanked population using AI-driven risk analysis and decentralized finance (DeFi) on the Arbitrum blockchain.
