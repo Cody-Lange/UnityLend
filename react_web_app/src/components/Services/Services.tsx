@@ -2,6 +2,7 @@ import React from 'react';
 import { useScrollAnimation, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 import { usePageLoad } from '../../hooks/usePageLoad';
 import './Services.css';
+import './Services.css';
 
 const Services: React.FC = () => {
   const loaded = usePageLoad(100);
@@ -125,7 +126,17 @@ const Services: React.FC = () => {
           />
         </div>
         
-        <div ref={servicesContainerRef} className="grid-3-columns gap-row-104px">
+        <div 
+          ref={servicesContainerRef} 
+          className="grid-3-columns gap-row-104px"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '104px 40px',
+            alignItems: 'flex-start',
+            justifyItems: 'start'
+          }}
+        >
           {services.map((service, index) => (
             <div 
               key={service.id}
@@ -133,6 +144,13 @@ const Services: React.FC = () => {
               data-w-id={service.id} 
               data-animate
               className="inner-container _362px _100-mbl"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                width: '100%',
+                height: 'auto'
+              }}
             >
               <div 
                 id={`w-node-_${service.id.replace(service.id.slice(-2), service.id.slice(-2) === 'eb' ? 'ec' : service.id.slice(-2) === 'bf' ? 'c0' : service.id.slice(-2) === 'cc' ? 'cd' : service.id.slice(-2) === '99' ? '9a' : service.id.slice(-2) === 'f1' ? 'f2' : 'cd')}-89416502`} 
